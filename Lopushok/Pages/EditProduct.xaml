@@ -1,0 +1,61 @@
+﻿<Page x:Class="Lopushok.Pages.EditProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lopushok.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="EditProduct">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Редактирование агента" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="600" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Название продукта:" FontSize="16"/>
+                    <TextBox Name="tbTitle" Text="{Binding Title}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Артикуль:" FontSize="16"/>
+                    <TextBox Name="tbArticle" Text="{Binding ArticleNumber}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Тип продукта:" FontSize="16"/>
+                    <ComboBox Name="cbType" SelectedItem="{Binding ProductType}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Номер цеха:" FontSize="16"/>
+                    <TextBox Name="tbWorkshop" Text="{Binding ProductionWorkshopNumber}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Количесто человек на производстов:" FontSize="16"/>
+                    <TextBox Name="tbPersonCount" Text="{Binding ProductionPersonCount}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Минимальная цена для агента:" FontSize="16"/>
+                    <TextBox Name="tbCost" Text="{Binding MinCostForAgent}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Удалить" Name="btnDelete" Click="btnDelete_Click" Background="#CEFFF9"/>
+            <Button Content="Сохранить изменения" Name="btnAdd" Click="btnAdd_Click" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Page>

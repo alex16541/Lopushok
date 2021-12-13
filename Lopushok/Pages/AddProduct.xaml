@@ -1,0 +1,53 @@
+﻿<Page x:Class="Lopushok.Pages.AddProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lopushok.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="AddProduct">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Добавление агента" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="600" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Название продукта:" FontSize="16"/>
+                    <TextBox Name="tbTitle"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Артикуль:" FontSize="16"/>
+                    <TextBox Name="tbArticle"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Тип продукта:" FontSize="16"/>
+                    <ComboBox Name="cbType"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Номер цеха:" FontSize="16"/>
+                    <TextBox Name="tbWorkshop"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Количесто человек на производстов:" FontSize="16"/>
+                    <TextBox Name="tbPersonCount"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Минимальная цена для агента:" FontSize="16"/>
+                    <TextBox Name="tbCost"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Button Content="Добавить" Name="btnAdd" Click="btnAdd_Click" Grid.Row="2"/>
+    </Grid>
+</Page>

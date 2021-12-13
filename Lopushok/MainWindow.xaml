@@ -1,0 +1,30 @@
+﻿<Window x:Class="Lopushok.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lopushok"
+        mc:Ignorable="d"
+        MinHeight="750"
+        MinWidth="1000"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="750" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60px"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#CEFFF9" Grid.ColumnSpan="3"/>
+            <Image Margin="10" Source="/Resources/Lopushok.png" HorizontalAlignment="Left" ></Image>
+            <TextBlock Text="Лопушок" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+            <Button Content="Назад" Name="btnBack" Click="btnBack_Click" Grid.Column="3"/>
+        </Grid>
+        <Frame Name="MainFrame" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
